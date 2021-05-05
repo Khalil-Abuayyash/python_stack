@@ -1,0 +1,21 @@
+pip list : shows dependencies inside an environment or shows all libraries.
+
+deactivate: deactivates the currently activated virtual environment.
+
+pip3 list : shows installed libraries.
+
+call myEnvironments/py3Env/Scripts/activate : activates py3Env (or any specified) environment.
+
+pip install Django==2.2.4 (What information do you see returned in terminal after this command?)
+that Django have been installed with the version we specified after the two equal signs. 
+
+pip freeze (What's the difference between freeze and list?)
+freeze shows the dependencies which have been installed specifically for the  (requirements)
+
+then run this command: pip freeze > requirements.txt.
+ What do you see when you ls? a new file "requirements.txt"
+ What's inside this file? environment's dependencies.
+
+pip uninstall Django: uninstall the Django package.
+
+pip show Django: shows details about the specified package if installed, if not tells that the package is not found.
