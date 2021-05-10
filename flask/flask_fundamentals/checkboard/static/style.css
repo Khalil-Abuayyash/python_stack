@@ -1,0 +1,38 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    /* border: 1px solid black; */
+}
+
+.cell {
+    min-width: 50px;
+    min-height: 50px;
+}
+
+body :nth-child(odd) :nth-child(odd) {
+    background-color: white;
+}
+
+body :nth-child(odd) :nth-child(even) {
+    background-color: black;
+}
+
+body :nth-child(even) :nth-child(odd) {
+    background-color: black;
+}
+
+body :nth-child(even) :nth-child(even) {
+    background-color: white;
+}
+
