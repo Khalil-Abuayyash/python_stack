@@ -1,5 +1,4 @@
 from flask import Flask, render_template, request
-from werkzeug.utils import unescape
 
 app = Flask(__name__)
 
