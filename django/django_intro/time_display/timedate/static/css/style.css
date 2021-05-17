@@ -1,0 +1,30 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    width:970px;
+    margin: 0 auto;
+}
+
+div {
+    margin: 0 auto;
+    border: 1px solid black;
+    width: fit-content;
+    padding: 20px;
+}
+
+h2 {
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid black;
+    width: fit-content;
+}
+
+h1 {
+    width: fit-content;
+    margin-bottom: 10px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
