@@ -1,0 +1,38 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    padding: 20px;
+    width: 970px;
+    margin: 0 auto;
+}
+
+h1 {
+    width: fit-content;
+    margin: 0 auto;
+    padding: 5px;
+}
+
+form, table {
+    margin: 0 auto;
+}
+
+table {
+    border: 1px solid blue;
+    padding: 10px;
+}
+
+td {
+    padding: 5px;
+    border-bottom: 3px dashed black;
+    font-size: x-large;
+}
+
+input, select {
+    font-size: x-large;
+    padding: 10px;
+}
+
+

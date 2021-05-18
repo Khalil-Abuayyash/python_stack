@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <form action="/result" method="POST">
+        {% csrf_token %}
+        <table>
+            <tr>
+                <td>
+                    Your Name:
+                </td>
+                <td>
+                    <input name="name" type="text">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Dojo Location
+                </td>
+                <td>
+                    <select name="location" id="location">
+                        <option value="Beit_Ommar">Beit Ommar</option>
+                        <option value="Bier_Zeit">Bier Ziet</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Favorite Language
+                </td>
+                <td>
+                    <select name="language" id="language">
+                        <option value="python">python</option>
+                        <option value="javescript">javascript</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Comment(optional):
+                </td>
+                <td>
+
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <textarea name="comment" id="comment" cols="50" rows="5"></textarea>
+                </td>
+                <td>
+                    
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    press to submit the form
+                </td>
+                <td>
+                    <input type="submit" value="Submit">
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
