@@ -1,7 +1,5 @@
 from django.shortcuts import redirect, render
 
-# Create your views here.
-
 def root(request):
     if 'visits' in request.session:
         request.session['visits'] += 1
@@ -15,3 +13,4 @@ def root(request):
 def clear(request):
     request.session.clear()
     return redirect('/')
+
