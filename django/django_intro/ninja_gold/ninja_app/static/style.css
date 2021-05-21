@@ -1,0 +1,41 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    width: 970px;
+    margin: 0 auto;
+}
+
+#placeses {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 10px;
+}
+
+.place {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 3px solid black;
+    padding: 10px;
+    width: 17%;
+}
+
+.place > * {
+    margin-bottom: 10px;
+}
+
+body > h2 {
+    width: fit-content;
+    margin: 10px auto;
+}
+
+body > input {
+    border: 2px solid black;
+    display: block;
+    margin: 10px auto;
+    width: fit-content;
+}
