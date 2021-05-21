@@ -1,0 +1,17 @@
+from users_app.models import User
+new_user = User(first_name='Khalil',last_name='abuayyash',email_address='khalilayyash@gmail.com',age=26)
+new_user.save()
+User.objects.create(first_name='alaa',last_name='ibrahim',email_address='alaadin@gmail.com',age=26)
+User.objects.create(first_name='yousef',last_name='nour',email_address='ynour@gmail.com',age=28)
+User.objects.all()
+User.objects.last()
+User.objects.last().__dict__
+User.objects.first()
+User.objects.first().__dict__
+user = User.objects.get(id=3)
+user.last_name = 'Pancakes'
+user.save()
+user = User.objects.get(id=2)
+user.delete()
+User.objects.all().order_by('first_name')
+User.objects.all().order_by('-first_name')

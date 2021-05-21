@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <h1>All the Users</h1>
+    <table>
+        <tr>
+            <td>Id</td>
+            <td>Name</td>
+            <td>Email</td>
+            <td>Age</td>
+        </tr>
+        {%  for user in users %}
+            <tr>
+                <td>{{user.id}}</td>
+                <td>{{user.first_name}} {{last_name}}</td>
+                <td>{{user.email_address}}</td>
+                <td>{{user.age}}</td>
+            </tr>
+        {% endfor %}
+
+    </table>
+
+    <h1>Add a User</h1>
+
+    <form action="/create" method="POST">
+        {% csrf_token %}
+        <table>
+            <tr>
+                <td>
+                    <label for="first_name">First Name</label>
+                    <input type="text" id="first_name" name="first_name">
+                </td>
+                <td>
+                    <label for="last_name">Last Name</label>
+                    <input type="text" id="last_name" name="last_name">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="email_address">Email</label>
+                    <input type="text" id="email_address" name="email_address">
+                </td>
+                <td>
+                    <label for="age">Age</label>
+                    <input type="text" id="age" name="age">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit" value="Create a new user">
+                </td>
+            </tr>
+        </table>
+         
+    </form>
+
+
+</body>
+</html>
