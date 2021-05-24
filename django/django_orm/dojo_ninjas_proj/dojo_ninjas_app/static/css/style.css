@@ -1,0 +1,52 @@
+/* * {
+    margin: 0px;
+    padding: 0px;
+} */
+
+body {
+    width: 970px;
+    margin: 0 auto;
+}
+
+body > * {
+    margin: 0 auto;
+    width: fit-content;
+    padding: 5px;
+}
+
+hr {
+    width: 100%;
+    padding: 1px;
+    background-color: black;
+}
+
+h1 {
+    width: fit-content;
+    margin: 0 auto;
+}
+
+#forms {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+form {
+    width: fit-content;
+    padding: 20px;
+    background-color: blue;
+    display: flex;
+    flex-direction: column;
+}
+
+form > *{
+    margin-bottom: 5px;
+}
+
+input, select {
+    border: 1px solid black;
+    padding: 10px;
+}
+
+section > ul > li {
+    margin-bottom: 20px;
+}
