@@ -1,0 +1,40 @@
+python manage.py makemigrations
+python manage.py migrate
+
+python manage.py shell
+from dojo.ninjas_app.models import Dojo, Ninja
+
+Dojo.objects.create(name="BietOmmar", city="Hebron", state="ps").save()
+Dojo.objects.create(name="BierZeit", city="Ramallah", state="ps").save()
+Dojo.objects.create(name="Anabta", city="TulKarem", state="ps").save()
+
+for dojo in Dojo.objects.all() :
+...     dojo.delete()
+
+Dojo.objects.create(name="BietOmmar", city="Hebron", state="ps").save()
+Dojo.objects.create(name="BierZeit", city="Ramallah", state="ps").save()
+Dojo.objects.create(name="Anabta", city="TulKarem", state="ps").save()
+
+Ninja.objects.create(first_name="Khalil",last_name="Abuayyash",dojo = Dojo.objects.get(id=4))
+Ninja.objects.create(first_name="Yousef",last_name="Nour",dojo = Dojo.objects.get(id=4)
+Ninja.objects.create(first_name="Alladin",last_name="Ibrahim",dojo = Dojo.objects.get(id=4))
+
+Ninja.objects.create(first_name="Khalil",last_name="Abuayyash",dojo = Dojo.objects.get(id=5))
+Ninja.objects.create(first_name="Yousef",last_name="Nour",dojo = Dojo.objects.get(id=5)
+Ninja.objects.create(first_name="Alladin",last_name="Ibrahim",dojo = Dojo.objects.get(id=5))
+
+Ninja.objects.create(first_name="Khalil",last_name="Abuayyash",dojo = Dojo.objects.get(id=6))
+Ninja.objects.create(first_name="Yousef",last_name="Nour",dojo = Dojo.objects.get(id=6)
+Ninja.objects.create(first_name="Alladin",last_name="Ibrahim",dojo = Dojo.objects.get(id=6))
+
+Dojo.objects.first().ninjas
+Dojo.objects.last().ninjas
+
+Ninja.objects.last().dojo
+
+python manage.py makemigrations
+python manage.py migrate
+
+python manage.py shell
+from dojo_ninja_app.models import Dojo
+Dojo.objects.create(name = "Turbica", city="Hebron", state="ps", desc="the best dojo ever").save()
