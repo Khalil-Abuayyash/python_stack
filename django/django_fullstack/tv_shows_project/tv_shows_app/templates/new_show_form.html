@@ -9,19 +9,28 @@
 <body>
     <h1>Add a new show</h1>
     <a href="/shows">Go back</a>
+    {% if messages %}
+        <ul>
+            {% for message in messages %}
+                <li>
+                    {{message}}
+                </li>
+            {% endfor %}
+        </ul>
+    {% endif %}
     <form action="/shows/create" method="POST">
         {% csrf_token %}
         <div>
             <label for="title">Title</label>
-            <input type="text" name="title" id="title" />
+            <input type="text" name="title" id="title" required/>
         </div>
         <div>
             <label for="network">Network</label>
-            <input type="text" name="network" id="network" />
+            <input type="text" name="network" id="network" required/>
         </div>
         <div>
             <label for="release_date">Release Date</label>
-            <input type="date" name="release_date" id="release_date" />
+            <input type="date" name="release_date" id="release_date" required/>
         </div>
         <div>
             <label for="desc">Description</label>
