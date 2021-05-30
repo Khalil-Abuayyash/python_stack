@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Success! Welcome, {{request.session.first_name}}</h1>
+        <a href="/logout">Logout</a>
+    </header>
+    <main>
+        <section>
+            {% if request.session.id == book.uploader.id %}
+                <form action="/update/{{book.id}}" method="POST">
+                    {% csrf_token %}
+                    <input type="text" name="title" placeholder="{{book.title}}" value="{{book.title}}">
+                    <p>Added by : {{book.uploader.first_name}} {{book.uploader.last_name}}</p>
+                    <p>Added on: {{book.created_at}}</p>
+                    <p>Last updated on: {{book.updated_at}}</p>
+                    Description: <input type="textarea" name="desc" placeholder="{{book.desc}}" value="{{book.desc}}">
+                    <input type="submit" value="update">
+                    <a href="/destroy/{{book.id}}">Delete</a>
+                </form>
+            {% else %}
+                <h1>{{book.title}}</h1>
+                <p>Added by : {{book.uploader.first_name}} {{book.uploader.last_name}}</p>
+                <p>Added on: {{book.created_at}}</p>
+                <p>Last updated on: {{book.updated_at}}</p>
+                <p>Description: {{book.desc}}</p>
+            {% endif %}
+        </section>
+        <section>
+            <h1>Users Who Like This Book</h1>
+            <ul>
+                {% for liker in book.likers.all %}
+                    <li>{{liker.first_name}} {{liker.last_name}}</li>
+                {% endfor %}
+            </ul>
+            {% if book not in fav_books  %}
+                <p><a href="/add_to_fav/{{book.id}}">Add to Favorites</a></p>
+            {% else %}
+                <p><a href="">Un-favorite</a></p>
+            {% endif %}
+            
+        </section>
+    </main>
+</body>
+</html>

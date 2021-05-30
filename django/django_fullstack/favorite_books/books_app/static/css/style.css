@@ -1,0 +1,55 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    width: 970px;
+    margin: 0 auto;
+}
+
+body > * {
+    margin: 0px auto 10px auto;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+}
+
+header > a {
+    color: black;
+    font-size: large;
+    width: fit-content;
+    align-self: center;
+}
+
+main {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+h2 {
+    width: fit-content;
+}
+
+form {
+    background-color: blue;
+    color: white;
+    width: fit-content;
+    padding: 20px;
+    font-size: large;
+    border-radius: 5px;
+    border: 2px solid black
+}
+
+form > * {
+    margin: 0px auto 10px auto;
+    padding: 10px;
+}
+
+input {
+    border: 3px solid black;
+    display: block;
+}
