@@ -1,0 +1,57 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    width: 970px;
+    margin: 0 auto;
+    /* background-color: red; */
+}
+
+header {
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: fit-content;
+    padding: 20px;
+    background-color: burlywood;
+}
+
+header > h1 {
+    flex: 7;
+}
+
+header > h4 {
+    flex: 2;
+}
+
+header > a {
+    text-decoration: none;
+    color: white;
+    background-color: black;
+    width: fit-content;
+    padding: 5px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(209, 162, 101);
+}
+
+main > * {
+    width: fit-content;
+    padding: 10px;
+}
+
+main  form {
+    display: flex;
+    flex-direction: column;
+}
+
+textarea {
+    padding: 20px;
+}

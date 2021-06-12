@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wall</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/wall.css' %}">
+</head>
+<body>
+    <header>
+        <h1>CodingDojo Wall</h1>
+        <h4>Welcome {{user.first_name}} {{user.last_name}} </h4>
+        <a href="/logout">log off</a>
+    </header>
+    <main>
+        <form action="/wall/create_message" method="POST">
+            {% csrf_token %}
+            <h3>post a message</h3>
+            <textarea name="text" id="" cols="30" rows="10"></textarea>
+            <input type="submit" value="post a message">
+        </form>
+        <section>
+            {% for post in posts %}
+                <article>
+                    <h4>{{post.user.first_name}} {{post.user.last_name}} - {{post.created_at}}</h4>
+                    <p>{{post.text}}</p>
+                    {% for comment in post.comments.all %}
+                        <h5>{{comment.user.first_name}} {{comment.user.last_name}} - {{comment.created_at}}</h5>
+                        <p>{{comment.text}}</p>
+                    {% endfor %}
+                    <form action="/wall/create_comment" method="POST">
+                        {% csrf_token %}
+                        <h3>post a comment</h3>
+                        <textarea name="text" id="" cols="30" rows="10"></textarea>
+                        <input type="submit" value="post a comment">
+                    </form>
+                </article>
+            {% endfor %}
+            
+        </section>
+    </main>
+</body>
+</html>
